@@ -6,21 +6,23 @@ type Props = {
   page: number;
   setPage: any;
   setMaxPage: any;
+  value: string;
+  setValue: any;
 };
 
-const Search = ({ setCards, page, setPage, setMaxPage }: Props) => {
-  const [value, setValue] = useState<string>('');
-
+const Search = ({
+  setCards,
+  page,
+  setPage,
+  setMaxPage,
+  value,
+  setValue,
+}: Props) => {
   function handleChange(e: any) {
     setValue(e.target.value);
     if (e.target.value === '' || page !== 1) {
       setPage(1);
     }
-  }
-
-  function handleReset() {
-    setValue('');
-    setPage(1);
   }
 
   useEffect(() => {
@@ -35,7 +37,7 @@ const Search = ({ setCards, page, setPage, setMaxPage }: Props) => {
   });
 
   return (
-    <section className="flex md:flex-row flex-col max-w-sm w-full gap-4">
+    <section className="flex md:flex-row flex-col max-w-xs w-full gap-4">
       <input
         className="px-3 py-2 rounded-md flex-1"
         type="text"
@@ -43,13 +45,6 @@ const Search = ({ setCards, page, setPage, setMaxPage }: Props) => {
         value={value}
         onChange={handleChange}
       />
-      <button
-        type="submit"
-        className="bg-white text-black rounded-md px-2 py-2"
-        onClick={handleReset}
-      >
-        Reset
-      </button>
     </section>
   );
 };

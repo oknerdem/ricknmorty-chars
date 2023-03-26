@@ -7,6 +7,8 @@ interface CardSecProps {
   page: number;
   setPage: any;
   setMaxPage: any;
+  value: string;
+  setValue: any;
 }
 
 const CardSec = ({
@@ -15,6 +17,8 @@ const CardSec = ({
   page,
   setPage,
   setMaxPage,
+  value,
+  setValue,
 }: CardSecProps) => {
   return (
     <>
@@ -24,6 +28,8 @@ const CardSec = ({
         page={page}
         setPage={setPage}
         setMaxPage={setMaxPage}
+        value={value}
+        setValue={setValue}
       />
       <div className="flex flex-wrap gap-6 max-w-7xl justify-center">
         {cards?.map((card: any) => (

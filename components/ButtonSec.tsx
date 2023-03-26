@@ -2,11 +2,12 @@ import { NextButton, PrevButton } from '@/components/Buttons';
 
 interface ButtonSecProps {
   page: number;
-  setPage: (page: number) => void;
   maxPage: number;
+  setPage: (page: number) => void;
+  setValue: (value: string) => void;
 }
 
-const ButtonSec = ({ page, setPage, maxPage }: ButtonSecProps) => {
+const ButtonSec = ({ page, setPage, setValue, maxPage }: ButtonSecProps) => {
   const handlePrevPage = () => {
     setPage(page - 1);
     moveUp();
@@ -19,6 +20,7 @@ const ButtonSec = ({ page, setPage, maxPage }: ButtonSecProps) => {
 
   const handleReset = () => {
     setPage(1);
+    setValue('');
     moveUp();
   };
 

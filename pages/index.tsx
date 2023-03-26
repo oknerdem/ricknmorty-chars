@@ -10,6 +10,7 @@ const Home = () => {
   const [cards, setCards] = useState<any[]>([]);
   const [maxPage, setMaxPage] = useState<number>(0);
   const [page, setPage] = useState<number>(1);
+  const [value, setValue] = useState<string>('');
 
   useEffect(() => {
     fetch(`https://rickandmortyapi.com/api/character/?page=${page}`)
@@ -33,9 +34,16 @@ const Home = () => {
                 setCards={setCards}
                 setPage={setPage}
                 setMaxPage={setMaxPage}
+                value={value}
+                setValue={setValue}
               />
               <CurrentPage page={page} />
-              <ButtonSec page={page} setPage={setPage} maxPage={maxPage} />
+              <ButtonSec
+                page={page}
+                setPage={setPage}
+                maxPage={maxPage}
+                setValue={setValue}
+              />
             </div>
           </>
         }
