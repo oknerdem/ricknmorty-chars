@@ -1,4 +1,4 @@
-import { NextButton, PrevButton } from '@components/Buttons';
+import { NextButton, PrevButton } from '@/components/Buttons';
 
 interface ButtonSecProps {
   page: number;

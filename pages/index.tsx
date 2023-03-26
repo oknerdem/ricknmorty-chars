@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import Layout from '@components/Layout';
-import CardSec from '@components/CardSec';
-import CurrentPage from '@components/CurrentPage';
-import ButtonSec from '@components/ButtonSec';
+import Layout from '@/components/Layout';
+import CardSec from '@/components/CardSec';
+import CurrentPage from '@/components/CurrentPage';
+import ButtonSec from '@/components/ButtonSec';
 
 const Home = () => {
   const title = 'Rick and Morty Characters';
