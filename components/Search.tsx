@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 
 type Props = {
   cards: any[];
@@ -37,15 +37,13 @@ const Search = ({
   });
 
   return (
-    <section className="flex md:flex-row flex-col max-w-xs w-full gap-4">
-      <input
-        className="px-3 py-2 rounded-md flex-1"
-        type="text"
-        placeholder="Search for a character..."
-        value={value}
-        onChange={handleChange}
-      />
-    </section>
+    <input
+      className="sInput"
+      type="text"
+      placeholder="Search..."
+      value={value}
+      onChange={handleChange}
+    />
   );
 };
 

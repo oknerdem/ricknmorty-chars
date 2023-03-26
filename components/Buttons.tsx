@@ -7,14 +7,14 @@ interface ButtonProps {
   children: React.ReactNode;
 }
 
+const buttonNormal =
+  'font-semibold border-2 border-zinc-800 rounded-md px-2 py-1 hover:bg-black hover:text-white duration-200 dark:hover:bg-white dark:hover:text-black';
+
 const NextButton = ({ page, maxPage, children, onClick }: ButtonProps) => {
-  const NextButtonClasses = classNames(
-    'font-semibold border-2 border-zinc-800 rounded-md px-2 py-1 hover:bg-black hover:text-white duration-200 dark:hover:bg-white dark:hover:text-black',
-    {
-      'opacity-50 hover:no-underline cursor-not-allowed hover:bg-white hover:text-black':
-        page == maxPage,
-    }
-  );
+  const NextButtonClasses = classNames(buttonNormal, {
+    'opacity-50 cursor-not-allowed bg-black text-white dark:bg-white dark:text-black':
+      page == maxPage,
+  });
 
   return (
     <button
@@ -28,13 +28,10 @@ const NextButton = ({ page, maxPage, children, onClick }: ButtonProps) => {
 };
 
 const PrevButton = ({ page, onClick, children }: ButtonProps) => {
-  const PrevButtonClasses = classNames(
-    'font-semibold border-2 border-zinc-800 rounded-md px-2 py-1 hover:bg-black hover:text-white duration-200 dark:hover:bg-white dark:hover:text-black',
-    {
-      'opacity-50 hover:no-underline cursor-not-allowed hover:bg-white hover:text-black':
-        page == 1,
-    }
-  );
+  const PrevButtonClasses = classNames(buttonNormal, {
+    'opacity-50 cursor-not-allowed bg-black text-white dark:bg-white dark:text-black':
+      page == 1,
+  });
 
   return (
     <button
