@@ -30,7 +30,7 @@ const Search = ({ setCards, page, setPage, setMaxPage }: Props) => {
       .then(res => res.json())
       .then(data => {
         setCards(data.results);
-        setMaxPage(data.info.pages);
+        setMaxPage(data.info?.pages);
       });
   });
 
