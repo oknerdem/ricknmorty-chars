@@ -6,13 +6,22 @@ interface CharsTableProps {
   name: string;
   gender: string;
   status: string;
+  origin: {
+    name: string;
+  };
 }
 
-const CharsTable = ({ image, name, gender, status }: CharsTableProps) => {
+const CharsTable = ({
+  image,
+  name,
+  gender,
+  status,
+  origin,
+}: CharsTableProps) => {
   const statusClassName = classNames({
     'text-green-500': status === 'Alive',
     'text-red-500': status === 'Dead',
-    'text-gray-500': status !== 'Alive' && status !== 'Dead',
+    'text-blue-500': status !== 'Alive' && status !== 'Dead',
   });
 
   status = status === 'unknown' ? 'Unknown' : status;
@@ -29,8 +38,9 @@ const CharsTable = ({ image, name, gender, status }: CharsTableProps) => {
         unoptimized
         priority
       />
-      <div className="text-center font-semibold">
+      <div className="text-center font-semibold flex flex-col">
         {name} <div className={statusClassName}>{status}</div>
+        <div className="text-xs opacity-60">{origin.name}</div>
       </div>
     </section>
   );
