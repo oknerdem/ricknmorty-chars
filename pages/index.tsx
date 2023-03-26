@@ -27,7 +27,13 @@ const Home = () => {
         page={
           <>
             <div className="flex flex-col justify-center items-center w-full gap-6">
-              <CardSec cards={cards} setCards={setCards} />
+              <CardSec
+                cards={cards}
+                page={page}
+                setCards={setCards}
+                setPage={setPage}
+                setMaxPage={setMaxPage}
+              />
               <CurrentPage page={page} />
               <ButtonSec page={page} setPage={setPage} maxPage={maxPage} />
             </div>
