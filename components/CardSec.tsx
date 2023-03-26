@@ -1,4 +1,4 @@
-import CharsTable from '@/components/CharsTable';
+import CharsTable from '@components/CharsTable';
 
 interface CardSecProps {
   cards: any;
