@@ -17,8 +17,8 @@ const CardSec = ({
   page,
   setValue,
   setCards,
-  setPage,
   setMaxPage,
+  setPage,
 }: CardSecProps) => {
   return (
     <>
