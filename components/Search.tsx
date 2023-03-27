@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 type Props = {
   setCards: any;
@@ -17,12 +17,21 @@ const Search = ({
   value,
   setValue,
 }: Props) => {
+  const inputRef = useRef<HTMLInputElement>(null);
+
   function handleChange(e: any) {
     setValue(e.target.value);
     if (e.target.value === '' || page !== 1) {
       setPage(1);
     }
   }
+
+  useEffect(() => {
+    addEventListener('keydown', keyListener);
+    return () => {
+      removeEventListener('keydown', keyListener);
+    };
+  });
 
   useEffect(() => {
     fetch(
@@ -35,12 +44,22 @@ const Search = ({
       });
   });
 
+  function keyListener(e: any) {
+    if (e.key === 'Enter') {
+      inputRef.current?.blur();
+    } else if (e.key === 'Escape') {
+      setValue('');
+      setPage(1);
+    }
+  }
+
   return (
     <input
       className="sInput"
       type="text"
       placeholder="Search..."
       value={value}
+      ref={inputRef}
       onChange={handleChange}
     />
   );
