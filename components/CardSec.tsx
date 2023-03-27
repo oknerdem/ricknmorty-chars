@@ -2,33 +2,33 @@ import Search from '@/components/Search';
 import CharsTable from '@/components/CharsTable';
 
 interface CardSecProps {
+  value: string;
   cards: any;
-  setCards: any;
   page: number;
+  setValue: any;
+  setCards: any;
   setPage: any;
   setMaxPage: any;
-  value: string;
-  setValue: any;
 }
 
 const CardSec = ({
+  value,
   cards,
-  setCards,
   page,
+  setValue,
+  setCards,
   setPage,
   setMaxPage,
-  value,
-  setValue,
 }: CardSecProps) => {
   return (
     <>
       <Search
-        setCards={setCards}
         page={page}
-        setPage={setPage}
-        setMaxPage={setMaxPage}
         value={value}
+        setPage={setPage}
         setValue={setValue}
+        setCards={setCards}
+        setMaxPage={setMaxPage}
       />
       <div className="flex flex-wrap gap-6 max-w-7xl justify-center">
         {cards?.map((card: any) => (
