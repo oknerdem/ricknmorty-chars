@@ -31,17 +31,17 @@ const Home = () => {
               <CardSec
                 cards={cards}
                 page={page}
+                value={value}
                 setCards={setCards}
                 setPage={setPage}
                 setMaxPage={setMaxPage}
-                value={value}
                 setValue={setValue}
               />
               <CurrentPage page={page} />
               <ButtonSec
                 page={page}
-                setPage={setPage}
                 maxPage={maxPage}
+                setPage={setPage}
                 setValue={setValue}
               />
             </div>

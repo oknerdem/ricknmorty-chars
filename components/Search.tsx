@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 
 type Props = {
-  cards: any[];
   setCards: any;
   page: number;
   setPage: any;

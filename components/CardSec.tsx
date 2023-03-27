@@ -23,7 +23,6 @@ const CardSec = ({
   return (
     <>
       <Search
-        cards={cards}
         setCards={setCards}
         page={page}
         setPage={setPage}
