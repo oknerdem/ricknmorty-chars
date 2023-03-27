@@ -3,6 +3,7 @@ import Layout from '@/components/Layout';
 import CardSec from '@/components/CardSec';
 import CurrentPage from '@/components/CurrentPage';
 import ButtonSec from '@/components/ButtonSec';
+import Box from '@/components/Box';
 
 const Home = () => {
   const title = 'Rick and Morty Characters';
@@ -26,26 +27,29 @@ const Home = () => {
       <Layout
         title={title}
         page={
-          <>
-            <div className="flex flex-col justify-center items-center w-full gap-6">
-              <CardSec
-                cards={cards}
-                page={page}
-                value={value}
-                setCards={setCards}
-                setPage={setPage}
-                setMaxPage={setMaxPage}
-                setValue={setValue}
-              />
-              <CurrentPage page={page} />
-              <ButtonSec
-                page={page}
-                maxPage={maxPage}
-                setPage={setPage}
-                setValue={setValue}
-              />
-            </div>
-          </>
+          <Box
+            display="flex"
+            flexDirection="col"
+            width="full"
+            tw="justify-center items-center gap-6"
+          >
+            <CardSec
+              cards={cards}
+              page={page}
+              value={value}
+              setCards={setCards}
+              setPage={setPage}
+              setMaxPage={setMaxPage}
+              setValue={setValue}
+            />
+            <CurrentPage page={page} />
+            <ButtonSec
+              page={page}
+              maxPage={maxPage}
+              setPage={setPage}
+              setValue={setValue}
+            />
+          </Box>
         }
       />
     </>
