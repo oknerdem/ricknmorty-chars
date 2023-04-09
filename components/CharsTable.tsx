@@ -29,7 +29,7 @@ const CharsTable = ({
   return (
     <section className="flex flex-col gap-2">
       <Image
-        className="rounded-xl w-72"
+        className="rounded-xl w-72 select-none"
         width={0}
         height={0}
         src={image}

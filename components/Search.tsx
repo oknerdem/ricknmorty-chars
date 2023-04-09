@@ -55,7 +55,7 @@ const Search = ({
   });
 
   return (
-    <div className="relative w-full mx-auto flex justify-center">
+    <div className="relative w-full mx-auto flex justify-center select-none">
       <input
         className="sInput"
         type="text"
@@ -64,13 +64,15 @@ const Search = ({
         ref={inputRef}
         onChange={handleChange}
       />
-      <RxCross2
-        className="dark:text-neutral-200 text-neutral-700 -ml-6 mt-3 cursor-pointer text-lg"
-        onClick={() => {
-          setValue('');
-          setPage(1);
-        }}
-      />
+      <button className="-ml-6 cursor-pointer hover:opacity-70 active:opacity-80 duration-200">
+        <RxCross2
+          className="dark:text-neutral-200 text-neutral-700 text-lg"
+          onClick={() => {
+            setValue('');
+            setPage(1);
+          }}
+        />
+      </button>
     </div>
   );
 };
