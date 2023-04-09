@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .sInput {
-  @apply px-3 py-2 rounded-md flex-1 max-w-xs w-full placeholder:text-neutral-400 bg-white border border-neutral-300 shadow-md active:outline-none focus:outline dark:focus:outline-zinc-600 focus:outline-zinc-400 dark:bg-neutral-700 dark:border-neutral-600;
+  @apply px-3 py-2 pr-7 rounded-md flex-1 max-w-xs w-full placeholder:text-neutral-400 bg-white border border-neutral-300 shadow-md active:outline-none focus:outline dark:focus:outline-zinc-600 focus:outline-zinc-400 dark:bg-neutral-700 dark:border-neutral-600;
 }
 
 @media (prefers-color-scheme: dark) {

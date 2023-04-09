@@ -1,4 +1,5 @@
-import { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
+import { RxCross2 } from 'react-icons/rx';
 
 type Props = {
   setCards: any;
@@ -26,6 +27,15 @@ const Search = ({
     }
   }
 
+  function keyListener(e: any) {
+    if (e.key === 'Enter') {
+      inputRef.current?.blur();
+    } else if (e.key === 'Escape') {
+      setValue('');
+      setPage(1);
+    }
+  }
+
   useEffect(() => {
     addEventListener('keydown', keyListener);
     return () => {
@@ -44,24 +54,24 @@ const Search = ({
       });
   });
 
-  function keyListener(e: any) {
-    if (e.key === 'Enter') {
-      inputRef.current?.blur();
-    } else if (e.key === 'Escape') {
-      setValue('');
-      setPage(1);
-    }
-  }
-
   return (
-    <input
-      className="sInput"
-      type="text"
-      placeholder="Search..."
-      value={value}
-      ref={inputRef}
-      onChange={handleChange}
-    />
+    <div className="relative w-full mx-auto flex justify-center">
+      <input
+        className="sInput"
+        type="text"
+        placeholder="Search..."
+        value={value}
+        ref={inputRef}
+        onChange={handleChange}
+      />
+      <RxCross2
+        className="dark:text-neutral-200 text-neutral-700 -ml-6 mt-3 cursor-pointer text-lg"
+        onClick={() => {
+          setValue('');
+          setPage(1);
+        }}
+      />
+    </div>
   );
 };
 
