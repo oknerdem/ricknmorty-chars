@@ -42,7 +42,7 @@ const Home = () => {
               setMaxPage={setMaxPage}
               setValue={setValue}
             />
-            <CurrentPage page={page} />
+            <CurrentPage page={page} maxPage={maxPage} />
             <ButtonSec
               page={page}
               maxPage={maxPage}
